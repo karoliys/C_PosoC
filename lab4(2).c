@@ -48,7 +48,7 @@ void ShowWords(char* word[500], int k)
 
 	for (int i = 0; i < k; i++)
 	{
-		if (i + 1 != k && isLetter(word[i][0]) && isLetter(word[i + 1][0])) // 2 слова
+		if (i + 1 != k && isLetter(word[i][0]) && isLetter(word[i + 1][0])) 
 		{
 			printf("%s ", word[i]);
 		}
@@ -98,8 +98,8 @@ int main()
 		p = strtok(str, separator);
 		while (p)
 		{
-			word[k++] = p; //запомнить в массиве
-			p = strtok(NULL, separator); // p указывает на следующее слово
+			word[k++] = p; 
+			p = strtok(NULL, separator);
 		}
 		ShowWords(word, k);
 	}

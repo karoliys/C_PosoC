@@ -15,7 +15,7 @@ void EnterArr(int** a, int n)
 }
 void ShowArr(int** a, int n)
 {
-	printf("\nМассив: \n");
+	printf("\nArray: \n");
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < n; j++)
@@ -29,7 +29,6 @@ void ShowArr(int** a, int n)
 void ArrUpDown(int** a, int n)
 {
 	int TempA; int SummUp = 0; int SummDown = 0;
-	//i+1 кол-во элементов пропуска
 	for (int i = 0; i < n / 2; i++)
 	{
 		for (int j = i + 1; j < n - (i + 1); j++)
@@ -41,9 +40,9 @@ void ArrUpDown(int** a, int n)
 			SummUp += a[i][j];
 		}
 	}
-	printf("Сумма по новому массиву:\n");
-	printf("Сумма верхней: %d\n", SummUp);
-	printf("Сумма нижней: %d\n", SummDown); // счёт по новой
+	printf("Sum for the new array:\n");
+	printf("Sum Top: %d\n", SummUp);
+	printf("Sum lower: %d\n", SummDown); // calculation based on a new array
 }
 void ArrLeftRight(int** a, int n)
 {
@@ -59,8 +58,8 @@ void ArrLeftRight(int** a, int n)
 			SummLeft += a[i][j];
 		}
 	}
-	printf("Сумма Левой: %d\n", SummLeft);
-	printf("Сумма правой: %d\n", SummRight); // счёт по новой
+	printf("Sum left: %d\n", SummLeft);
+	printf("Sum right: %d\n", SummRight); // calculation based on a new array
 }
 
 
@@ -68,24 +67,24 @@ int main()
 {
 	setlocale(LC_ALL, "Rus");
 	int size;
-	printf("Введите размер массива\n");
+	printf("Enter the size of the array\n");
 	if (!scanf_s("%d", &size)) {
-		printf("Ошибка, неверный ввод\n");
+		printf("Error, invalid input\n");
 		return 1;
 	}
 	if (size <= 0) {
-		printf("Ошибка, недопустимый аргумент\n");
+		printf("Error, invalid argument\n");
 		return 1;
 	}
 	int** array = (int**)malloc(size * sizeof(int*));
 	if (array == NULL) {
-		printf("Не удается выделить память\n");
+		printf("Cannot allocate memory\n");
 		return 1;
 	}
 	for (int i = 0; i < size; i++) {
 		array[i] = (int*)malloc(size * sizeof(int));
 		if (array[i] == NULL) {
-			printf("Не удается выделить память\n");
+			printf("Cannot allocate memory\n");
 			return 1;
 		}
 	}

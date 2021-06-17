@@ -6,13 +6,13 @@
 
 void menu()
 {
-	printf("1-Введите координаты треугольника\n");
-	printf("2-Определить вид треугольника\n");
-	printf("3-Вывод периметра треугольника\n");
-	printf("4-Вывод площади треугольника\n");
-	printf("5-Вывести радиусы вписанной и описанной вокруг треугольника окружностей\n");
-	printf("6-Информация о версии и авторе программы\n");
-	printf("Another-Выход\n");
+	printf("1-Enter the coordinates of a triangle\n");
+	printf("2-Determine the type of triangle\n");
+	printf("3-display the perimeter of the triangle\n");
+	printf("4-display area of the triangle\n");
+	printf("5-show the radii of the inscribed and circumscribed around the triangle of circle\n");
+	printf("6-Information about the version and author of the program\n");
+	printf("Another-Exit\n");
 }
 void ReadyTrg(double coordX[], double coordY[])
 {
@@ -23,9 +23,9 @@ void EnterCoord(double coordX[], double coordY[])
 {
 	for (int i = 0; i < 3; i++)
 	{
-		printf("Координата X%d:\n", i + 1);
+		printf("Coordinate X%d:\n", i + 1);
 		scanf_s("%lf", &coordX[i]);
-		printf("Координата Y%d:\n", i + 1);
+		printf("Coordinate Y%d:\n", i + 1);
 		scanf_s("%lf", &coordY[i]);
 	}
 }
@@ -53,19 +53,19 @@ void ViewTr(double lengthTr[])
 {
 	if ((lengthTr[0] == lengthTr[1]) && (lengthTr[1] == lengthTr[2]))
 	{
-		printf("Равносторонний");
+		printf("Equilateral");
 	}
 	else if ((lengthTr[0] == lengthTr[1]) || (lengthTr[1] == lengthTr[2]) || (lengthTr[0] == lengthTr[2]))
 	{
-		printf("Равнобедренный ");
+		printf("Isosceles ");
 	}
 	else if (pow(lengthTr[0], 2) == pow(lengthTr[1], 2) + pow(lengthTr[2], 2) || pow(lengthTr[1], 2) == pow(lengthTr[0], 2) + pow(lengthTr[2], 2) || pow(lengthTr[2], 2) == pow(lengthTr[1], 2) + pow(lengthTr[0], 2))
 	{
-		printf("Прямоугольный");
+		printf("Rectangular");
 	}
 	else
 	{
-		printf("Произвольный");
+		printf("Arbitrary");
 	}
 }
 
@@ -84,11 +84,11 @@ int main()
 		case 0: ReadyTrg(coordX, coordY); LengthTriangle(coordX, coordY, lengthTr); break;
 		case 1: EnterCoord(coordX, coordY); LengthTriangle(coordX, coordY, lengthTr); break;
 		case 2: ViewTr(lengthTr); break;
-		case 3: printf("Периметр:%f", Perimeter(lengthTr)); break;
-		case 4: printf("Площадь:%f", Square(lengthTr)); break;
+		case 3: printf("Perimeter:%f", Perimeter(lengthTr)); break;
+		case 4: printf("Square:%f", Square(lengthTr)); break;
 		case 5:
-			printf("Радиус вписанной:%f\n", Square(lengthTr) / (Perimeter(lengthTr) / 2));
-			printf("Радиус описанной:%f\n", lengthTr[0] * lengthTr[1] * lengthTr[2]) / (4 * Square(lengthTr)); break;
+			printf("Radius of the inscribed line:%f\n", Square(lengthTr) / (Perimeter(lengthTr) / 2));
+			printf("Radius of the described line:%f\n", lengthTr[0] * lengthTr[1] * lengthTr[2]) / (4 * Square(lengthTr)); break;
 		case 6: printf("Version: 1.33.7, By Karoliys"); break;
 		default: return 0; break;
 		}

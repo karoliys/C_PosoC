@@ -5,7 +5,7 @@
 void setString(char* str)
 {
 	char ch;
-	puts("Введите строку слов длиной не более 254 символов: \n");
+	puts("Enter a string of words no longer than 254 characters: \n");
 	int toCap = 1;
 	int i = 0;
 	while ((ch = getchar()) != '\n')

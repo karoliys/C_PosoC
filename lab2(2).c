@@ -41,14 +41,14 @@ int main()
 	setlocale(LC_ALL, "Rus");
 	long double X = 0, E;
 	int n = 1;
-	printf("Введите X в радианах:"); scanf_s("%lf", &X);
+	printf("Enter X in radians:"); scanf_s("%lf", &X);
 	int TempX = 0;
-	if (X / 2 * 3.1415926535 > 0) // отрасываем >2П
+	if (X / 2 * 3.1415926535 > 0) // grow > 2P
 	{
 		TempX = X / (2 * 3.1415926535);
 		X = X - 2 * 3.1415926535 * TempX;
 	}
-	printf("Введите погрешность:"); scanf_s("%lf", &E);
+	printf("Enter error:"); scanf_s("%lf", &E);
 	printf("sin(x):%f\n", sin(X));
 	SinXIt(X, E);
 	printf("sin(x) by recursion: %lf ", SinXRec(X, E, &n)); printf("n: %d\n", n);
